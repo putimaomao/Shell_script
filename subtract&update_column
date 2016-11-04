@@ -1,11 +1,11 @@
 #!/usr/bin/env csh
 #
 if ($# != 3) then 
- echo 'Usage:    ' $0 ' run1_data.star particles_movie.star  particles_movie_subset.star'
+ echo 'Usage:    ' $0 ' run1_data.star particles_newctf.star  run1_data_newctf.star'
  echo 'Where run1_data.star is a selection of an originally larger data set of the averaged particles.'
- echo 'The input particles_movie.star contains the movie frames of the entire larger data set.'
- echo 'The output particles_movie_subset.star will contain the movie frames only for those particles in run1_data.star.'
- echo 'Using particles_movie_subset.star in a continuation of run1 will speed up the expansion of the movie frames.'
+ echo 'The input particles_newcft.star contains the particles with new ctf value.'
+ echo 'The output run1_data_newctf.star will apply new ctf values to run1_data.star.'
+ echo 'have fun of updating column value You can update any column as you want by change column number below'
 else
 
  set star_selected_particles=$1
