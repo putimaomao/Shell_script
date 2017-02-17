@@ -23,7 +23,7 @@ awk 'FNR==NR{a[NR]=$5;next}{$5=a[FNR]}1' temp2.dat temp3.dat > temp4.dat
 awk 'FNR==NR{a[NR]=$6;next}{$6=a[FNR]}1' temp2.dat temp4.dat > temp5.dat
 awk 'FNR==NR{a[NR]=$7;next}{$7=a[FNR]}1' temp2.dat temp5.dat > temp6.dat
 
-#awk 'FNR==NR{a[NR]=$5;b[NR]=$6;c[NR]=$7;next}{$5=a[FNR];$6=b[FNR];$7=c[FNR];}1' temp2.dat temp3.dat > temp4.dat
+#awk 'FNR==NR{a[NR]=$5;b[NR]=$6;c[NR]=$7;next}{$5=a[FNR];$6=b[FNR];$7=c[FNR]}1' temp2.dat temp3.dat > temp4.dat
 #cat temp4.dat >> ${star_updated_selected_particles}
 
 cat temp6.dat >> ${star_updated_selected_particles}
