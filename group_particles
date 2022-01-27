@@ -1,5 +1,5 @@
 ##create a split file from star
-relion_star_printtable particles.star data_particles _rlnDefocusU _rlnImageName | sort -n | uniq -f 1 | awk '{print $2, $1}' > split_mics_defocus.dat
+relion_star_printtable fromcsparc.star data_particles _rlnDefocusU _rlnImageName | sort -n | uniq -f 1 | awk '{print $2, $1}' > split_mics_defocus.dat
 awk -v n=500 '1; NR % n == 0 {print ""}' split_mics_defocus.dat > split_mics_defocus_group.dat
 
-./relion.make_grouped_star_chen.sh split_mics_defocus_group.dat particles.star particles_groupped.star
+./relion.make_grouped_star_chen.sh split_mics_defocus_group.dat fromcsparc.star fromcsparc_groupped.star
