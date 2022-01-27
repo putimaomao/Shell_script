@@ -14,8 +14,8 @@ if ($# == 3) then
  # How many lines are there in the header?
  set nhead = `wc -l $output_star | awk '{print $1}'`
 
- # check in which column _rlnMicrographName is stored
- set colno=`grep _rlnMicrographName $input_star | awk -F"#" '{print $2}'`
+ # check in which column _rlnImageName is stored
+ set colno=`grep _rlnImageName $input_star | awk -F"#" '{print $2}'`
 
  # change all lines in the input starfile to have the corresponding groupname added to it
  set ll = 0
