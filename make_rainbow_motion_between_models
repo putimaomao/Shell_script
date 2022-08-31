@@ -1,1 +1,29 @@
+#calculate the distance between atoms, make a distance.com file first for chimera command
+for((i=1;i<=100;i++))
+do
+    echo "distance #0:$i.A@CA #1:$i.A@CA" >>distance.com
+done
+for((i=1;i<=100;i++))
+do
+    echo "distance #0:$i.B@CA #1:$i.B@CA" >>distance.com
+done
+for((i=1;i<=100;i++))
+do
+    echo "distance #0:$i.C@CA #1:$i.C@CA" >>distance.com
+done
+for((i=1;i<=100;i++))
+do
+    echo "distance #0:$i.D@CA #1:$i.D@CA" >>distance.com
+done
+for((i=1;i<=100;i++))
+do
+    echo "distance #0:$i.E@CA #1:$i.E@CA" >>distance.com
+done
+for((i=1;i<=100;i++))
+do
+    echo "distance #0:$i.F@CA #1:$i.F@CA" >>distance.com
+done
+
+#run chimera --nogui command
+chimera --nogui model1.pdb model2.pdb distance.com >>distance-value.txt
 
