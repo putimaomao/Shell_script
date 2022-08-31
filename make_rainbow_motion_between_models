@@ -28,10 +28,9 @@ done
 chimera --nogui model1.pdb model2.pdb distance.com >>distance-value.txt
 #3. edit distance-value.txt to only include distance lines
 #4. make attribute file
-cp distance-value.txt attribute-distance.txt
 sed '/^[[:space:]]*$/d' attribute-distance.txt
-#5. then text edit attribute file to have correct format
+#5. then text edit attribute file to have correct format, to specify residues
 #6. make pesudobond file
-cp distance-value.txt pseudobond.txt
-#7. edit psedobond.txt to correct format
+sed '/^[[:space:]]*$/d' pseudobond.txt
+#7. edit pseudobond.txt to the correct format
 
