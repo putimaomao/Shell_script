@@ -1,4 +1,4 @@
-#calculate the distance between atoms, make a distance.com file first for chimera command
+#1. calculate the distance between atoms, make a distance.com file first for chimera command
 for((i=1;i<=100;i++))
 do
     echo "distance #0:$i.A@CA #1:$i.A@CA" >>distance.com
@@ -24,6 +24,13 @@ do
     echo "distance #0:$i.F@CA #1:$i.F@CA" >>distance.com
 done
 
-#run chimera --nogui command
+#2. run chimera --nogui command
 chimera --nogui model1.pdb model2.pdb distance.com >>distance-value.txt
+
+#3. make attribute file
+cp distance-value.txt attribute-distance.txt
+#4. then text edit attribute file to have correct format
+#5. make pesudobond file
+cp distance-value.txt pseudobond.txt
+#6. edit psedobond.txt to correct format
 
