@@ -1,5 +1,5 @@
 #1. calculate the distance between atoms, make a distance.com file first for chimera command
-for ((i=1;i<=100;i++))
+For ((i=1;i<=100;i++))
 do
     echo "distance #0:$i.A@CA #1:$i.A@CA" >>distance.com
 done
@@ -19,7 +19,7 @@ for ((i=1;i<=100;i++))
 do
     echo "distance #0:$i.E@CA #1:$i.E@CA" >>distance.com
 done
-for ((i=1;i<=100;i++))
+for ((i=2;i<=248;i++))
 do
     echo "distance #0:$i.F@CA #1:$i.F@CA" >>distance.com
 done
@@ -35,5 +35,20 @@ recipient: residues
 (Tab)residues(Tab)distance
 #6. make pesudobond file
 sed '/^[[:space:]]*$/d' distance-value.txt >>pseudobond.txt
-#7. edit pseudobond.txt to the correct format (only leave atom specifications)
+#7. edit pseudobond.txt to the correct format (only leave atom specifications)	
+
+In Chimera – structure analysis 🡪 define attribute 🡪 OPEN the attribute_distance.txt
+In the “Render/Select by Attribute” window that opens, make sure your two models are highlighted, CTRL + left click within the histogram of values to add two more colors for a total of 5 colors, then change the “Palette” to Rainbow and consider clicking “Reverse threshold colors” to make blue the smallest value and red the highest value. Then click APPLY 🡪 your models should now change colors!! ** Will need to “Create corresponding color key” for any final figures, so that you have a legend for the colors and their distances!
+
+Tools - Depiction - “Pseudobond Reader”, then open the pseudobond.txt file that you created earlier.
+
+Then Tools – General Control – “Pseudobond Panel”, then select the pseudobond.txt file with a check mark, and highlight it, then click “attributes…” button. This will open a new box, check the “component pseudobond attributes” box, change the “halfbond mode” to ON 🡪 this will allow the pseudobonds to be colored based on their corresponding atom color. Also turn the “displayed” option to TRUE (this way you can hide atoms in the future, but keep pseudobonds visible, if this is set to false, or if atoms shown, then when you hide atoms, the pseudobonds will disappear). ** you can also change the appearance of the pseudobonds here, including the thickness of the lines, etc… but do NOT change color, or it will mess up your rainbow by distance setting.
+
+Type select #1@CA 
+(this is the model # for the final model, not the initial model)
+Then invert selection of selected model, to delete all of atoms EXCEPT for the Cas
+Then select #1@CA 
+Now show atoms!
+
+Now you can change the appearance of those atoms to whatever you want!!!
 
